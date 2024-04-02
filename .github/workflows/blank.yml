@@ -1,0 +1,16 @@
+name: Docker Workflow
+on:
+push:
+branches: [ master ]
+
+jobs:
+build:
+runs-on: ubuntu-latest
+steps:
+- name: Set up Docker
+uses: docker/setup-docker-action@v2
+- name: Run Docker commands
+run: |
+          # Add your Docker commands here, for example:
+          docker build .
+          docker push your_image_name
